@@ -1,0 +1,53 @@
+.container-fluid {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.header-body {
+    font-family: 'Acme', sans-serif;
+}
+
+.minutes {
+    display: inline-block;
+}
+
+.seconds {
+    display: inline-block;
+}
+
+.time {
+    display: inline-block;
+}
+
+.clock {
+    display: inline-block;
+}
+
+.col-sm1 {
+    text-align: left;
+    }
+
+.col-sm3 {
+text-align: right;
+}
+
+#quizArea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    display: block;
+    width: 100%;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 85px;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px dashed #c0c7cf;
+    border-radius: 6px;
+    resize: none;
+    overflow: hidden;
+  }
