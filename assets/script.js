@@ -1,17 +1,18 @@
 var questions = ["In what year was JavaScript first introduced?", "JavaScript was first developed to add programs to webpages in which browser?", "What to Java and JavaScript have in common as programming languages?", "What other name can be used interchangeably with JavaScript?", "How many bits does JavaScript use to store a single number value?", "What is the appoximate largest whole number that can be stored in JavaScript?", "The % sign represents which arithmetic operator?", "What symbol would you type before a declaration to indicate it is not true?"];
-var answers = [
-    ["1993", "1995", "1999", "2001"]
-    ["Internet Explorer", "Omni Web", "Mozilla", "Netscape Navigator"]
-    ["Vary little. Javascript was named as a marketing ploy to leverage Java's growing popularity", "They were developed by the same company", "The two can be used interchangeably for the same processes", "The two can be used together for complementary processes"]
-    ["Java", "HTML", "BrowserScript", "ECMAScript"]
-    ["4", "16", "64", "128"]
-    ["256 billion", "64 trillion", "9 quadrillion", "18 quintillion"]
-    ["Remainder", "Percentage of", "Division", "Is less than"]
-    ["?", "-", "/", "!"]
-];
+// This code is broken.
+var ans0 = ["1993", "1995", "1999", "2001"];
+var ans1 = ["Internet Explorer", "Omni Web", "Mozilla", "Netscape Navigator"]
+var ans2 = ["Very little. Javascript was named as a marketing ploy to leverage Java's growing popularity", "They were developed by the same company", "The two can be used interchangeably for the same processes", "The two can be used together for complementary processes"]
+var ans3 = ["Java", "HTML", "BrowserScript", "ECMAScript"]
+var ans4 = ["4", "16", "64", "128"]
+var ans5 = ["256 billion", "64 trillion", "9 quadrillion", "18 quintillion"]
+var ans6 = ["Remainder", "Percentage of", "Division", "Is less than"]
+var ans7 = ["?", "-", "/", "!"]
 var minutesLeft = 5;
 var secondsLeft = 0;
-var startButton = document.querySelector(".btn")
+var startButton = document.querySelector("#start-button");
+
+document.getElementById("start-button").addEventListener("click", question0);
 
 // function getFormattedMinutes() {
 //     //
@@ -70,30 +71,26 @@ var startButton = document.querySelector(".btn")
 // function renderTime() {
 //     minutesDisplay.textContent = getFormattedMinutes();
 //     secondsDisplay.textContent = getFormattedSeconds();
-
 //     if (secondsElapsed >= totalSeconds) {
-//         if (status === "Working") {
-//             alert("Time for a break!");
-//         } else {
-//             alert("Time to get back to work!");
-//         }
-
+//             alert("Sorry, Time's up!");
 //         stopTimer();
 //     }
 // }
 
 function question0() {
-    var quiz = document.getElementsById("#quizArea");
-//hide button
-    //clear welcome message
-    //display question[0] in place of welcome message
+    //var quiz = document.getElementsById("#quizArea");
+    // quizArea.textContent = (questions[0])
+    document.getElementById("start-button").style.display = "none";
+    document.getElementById("welcome-message").innerHTML = "Question 1";
+    document.getElementById("quizArea").innerHTML = questions[0];
+    document.getElementById("highScoresLink").style.display = "none";
     //display 4 answer boxes
     //Start clock countdown
     //Display question 0
     //Display answers 0
 }
 
-//Copy + paste for questions 0-6
+    //Copy + paste for questions 0-6
 // function quetion1() {
 //display question[0]
 //display 4 answer boxes
@@ -122,4 +119,5 @@ function question0() {
 //return to homepage
 // }
 
-startButton.addEventListener("click", startTimer, question0);
+//add startTimer
+//startButton.addEventListener("click", question0);

@@ -15,57 +15,57 @@ A separate page, High Scores, will then feature their high score in local storag
 Build status as of: 11/6/20
 HTML homepage: 100%
 HTML high scores page: 100%
-JavaScript: 0%
+JavaScript: 40%
 CSS: 100% (will grow with other pages)
 
 
 JavaScript Questions:
-1. In what year was JavaScript first introduced?
+0. In what year was JavaScript first introduced?
 a. 1993
 b. 1995 - Correct
 c. 1999
 d. 2001
 
-2. JavaScript was first developed to add programs to webpages in which browser?
+1. JavaScript was first developed to add programs to webpages in which browser?
 a. Internet Explorer
 b. OmniWeb
 c. Mozilla
 d. Netscape Navigator - correct
 
-3. What to Java and JavaScript have in common as programming languages?
+2. What to Java and JavaScript have in common as programming languages?
 a. Very little. JavaScript was named as a marketing ploy to try to leverage some of Java's growing popularity. - Correct
 b. They were developed by the same company.
 c. The two can be used interchangeably for the same processes.
 d. The two can be used together for complementary processes.
 
-4. What other name can be used interchangeably with JavaScript?
+3. What other name can be used interchangeably with JavaScript?
 a. Java
 b. HTML
 c. BrowserScript
 d. ECMAScript - correct
 
-5. How many bits does JavaScript use to store a single number value?
+4. How many bits does JavaScript use to store a single number value?
 a. 4
 b. 16
 c. 64 - correct
 d. 128
 
-6. What is the appoximate largest whole number that can be stored in JavaScript?
+5. What is the appoximate largest whole number that can be stored in JavaScript?
 a. 256 billion
 b. 64 trillion
 c. 9 quadrillion - correct
 d. 18 quintillion
 
-7. The % sign represents which arithmetic operator?
+6. The % sign represents which arithmetic operator?
 a. Remainder - correct.
 b. Percentage of
 c. Division
 d. Is less than
 
-8. What symbol would you type before a declaration to indicate it is not true?
+7. What symbol would you type before a declaration to indicate it is not true?
 a. ?
 b. -
-c. \
+c. /
 d. ! - correct
 
 
