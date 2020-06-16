@@ -7,22 +7,14 @@ var questions = ["In what year was JavaScript first introduced?   \n \n A. 1993 
     "The % sign represents which arithmetic operator?  \n \n A. Remainder \n B. Percentage of \n C. Divide \n D. Less than",
     "What symbol would you type before a declaration to indicate it is not true?  \n \n A. ? \n B. - \n C. / \n D. !"];
 
-var ans0 = ["1993", "1995", "1999", "2001"];
-var ans1 = ["Internet Explorer", "Omni Web", "Mozilla", "Netscape Navigator"]
-var ans2 = ["Very little. Javascript was named as a marketing ploy to leverage Java's growing popularity", "They were developed by the same company", "The two can be used interchangeably for the same processes", "The two can be used together for complementary processes"]
-var ans3 = ["Java", "HTML", "BrowserScript", "ECMAScript"]
-var ans4 = ["4", "16", "64", "128"]
-var ans5 = ["256 billion", "64 trillion", "9 quadrillion", "18 quintillion"]
-var ans6 = ["Remainder", "Percentage of", "Division", "Is less than"]
-var ans7 = ["?", "-", "/", "!"]
-
 var minutesLeft = 5;
 var secondsLeft = 0;
 var startButton = document.querySelector("#start-button");
 var secondsElapsed = 0;
+var answerButtons = document.getElementById("answer-buttons");
 
-document.getElementById("start-button").addEventListener("click", question0);
-document.getElementById("start-button").addEventListener("click", startTimer);
+document.getElementById("start-button").addEventListener("click", question1);
+// document.getElementById("start-button").addEventListener("click", startTimer);
 
 // function getFormattedMinutes() {
 //     //
@@ -87,53 +79,120 @@ document.getElementById("start-button").addEventListener("click", startTimer);
 //     }
 // }
 
-function question0() {
-    document.getElementById("start-button").style.display = "none";
-    document.getElementById("welcome-message").innerHTML = "Question 1";
-    document.getElementById("quizArea").innerHTML = questions[0];
-    document.getElementById("highScoresLink").style.display = "none";
-    document.getElementById("answer-buttons").addEventListener("click", question1);
-    //Start clock countdown
+function wrongAnswer() {
+    document.getElementById("footer-note").innerHTML = "Wrong";
+    //subtract 20 seconds
+}
+
+function correctAnswer() {
+    document.getElementById("footer-note").innerHTML = "Correct";
 }
 
 function question1() {
-    document.getElementById("welcome-message").innerHTML = "Question 2";
-    document.getElementById("quizArea").innerHTML = questions[1];
+    //Which year
+    //Unique to first question
+    answerButtons.classList.remove("hide");
+    document.getElementById("start-button").style.display = "none";
+    document.getElementById("highScoresLink").style.display = "none";
+
+    //Repeat for subsequent questions
+    //Display question
+    document.getElementById("welcome-message").innerHTML = "Question 1";
+    document.getElementById("quizArea").innerHTML = questions[0];
+
+    //When answer button clicked (has to be a way to shorten this....)
+    document.getElementById("buttonA").addEventListener("click", wrongAnswer);
+    document.getElementById("buttonB").addEventListener("click", correctAnswer);
+    document.getElementById("buttonC").addEventListener("click", wrongAnswer);
+    document.getElementById("buttonD").addEventListener("click", wrongAnswer);
     document.getElementById("answer-buttons").addEventListener("click", question2);
+
+    //Start clock countdown
 }
 
 function question2() {
-    document.getElementById("welcome-message").innerHTML = "Question 3";
-    document.getElementById("quizArea").innerHTML = questions[2];
+    //Which browser
+    document.getElementById("welcome-message").innerHTML = "Question 2";
+    document.getElementById("quizArea").innerHTML = questions[1];
+    document.getElementById("answer-buttons").addEventListener("click", question2);
+    document.getElementById("buttonA").addEventListener("click", wrongAnswer);
+    document.getElementById("buttonB").addEventListener("click", wrongAnswer);
+    document.getElementById("buttonC").addEventListener("click", wrongAnswer);
+    document.getElementById("buttonD").addEventListener("click", correctAnswer);
     document.getElementById("answer-buttons").addEventListener("click", question3);
 }
 
 function question3() {
-    document.getElementById("welcome-message").innerHTML = "Question 4";
-    document.getElementById("quizArea").innerHTML = questions[3];
+    //JS vs Java
+    document.getElementById("welcome-message").innerHTML = "Question 3";
+    document.getElementById("quizArea").innerHTML = questions[2];
+    document.getElementById("buttonD").removeEventListener("click", correctAnswer);
+    document.getElementById("buttonA").addEventListener("click", correctAnswer);
+    document.getElementById("buttonB").addEventListener("click", wrongAnswer);
+    document.getElementById("buttonC").addEventListener("click", wrongAnswer);
+    document.getElementById("buttonD").addEventListener("click", wrongAnswer);
     document.getElementById("answer-buttons").addEventListener("click", question4);
 }
 
 function question4() {
-    document.getElementById("welcome-message").innerHTML = "Question 5";
-    document.getElementById("quizArea").innerHTML = questions[4];
+    //Other Java name
+    document.getElementById("welcome-message").innerHTML = "Question 4";
+    document.getElementById("quizArea").innerHTML = questions[3];
+    document.getElementById("buttonA").removeEventListener("click", correctAnswer);
+    document.getElementById("buttonA").addEventListener("click", wrongAnswer);
+    document.getElementById("buttonB").addEventListener("click", wrongAnswer);
+    document.getElementById("buttonC").addEventListener("click", wrongAnswer);
+    document.getElementById("buttonD").addEventListener("click", correctAnswer);
     document.getElementById("answer-buttons").addEventListener("click", question5);
 }
 
 function question5() {
-    document.getElementById("welcome-message").innerHTML = "Question 6";
-    document.getElementById("quizArea").innerHTML = questions[5];
+    //How many bits (thinks A is correct)
+    document.getElementById("welcome-message").innerHTML = "Question 5";
+    document.getElementById("quizArea").innerHTML = questions[4];
+    document.getElementById("buttonD").removeEventListener("click", correctAnswer);
+    document.getElementById("buttonA").addEventListener("click", wrongAnswer);
+    document.getElementById("buttonB").addEventListener("click", wrongAnswer);
+    document.getElementById("buttonC").addEventListener("click", correctAnswer);
+    document.getElementById("buttonD").addEventListener("click", wrongAnswer);
     document.getElementById("answer-buttons").addEventListener("click", question6);
-}
-function question6() {
-    document.getElementById("welcome-message").innerHTML = "Question 7";
-    document.getElementById("quizArea").innerHTML = questions[6];
-    document.getElementById("answer-buttons").addEventListener("click", question7);
+    //
 }
 
+function question6() {
+    //largest whole number (thinks A is correct)
+    document.getElementById("welcome-message").innerHTML = "Question 6";
+    document.getElementById("quizArea").innerHTML = questions[5];
+    document.getElementById("buttonA").addEventListener("click", wrongAnswer);
+    document.getElementById("buttonB").addEventListener("click", wrongAnswer);
+    document.getElementById("buttonC").addEventListener("click", correctAnswer);
+    document.getElementById("buttonD").addEventListener("click", wrongAnswer);
+    document.getElementById("answer-buttons").addEventListener("click", question7);
+    //c
+}
 function question7() {
+    // What does % mean (thinks D is correct)
+    document.getElementById("welcome-message").innerHTML = "Question 7";
+    document.getElementById("quizArea").innerHTML = questions[6];
+    document.getElementById("buttonC").removeEventListener("click", correctAnswer);
+    document.getElementById("buttonA").addEventListener("click", correctAnswer);
+    document.getElementById("buttonB").addEventListener("click", wrongAnswer);
+    document.getElementById("buttonC").addEventListener("click", wrongAnswer);
+    document.getElementById("buttonD").addEventListener("click", wrongAnswer);
+    document.getElementById("answer-buttons").addEventListener("click", question8);
+    //a
+}
+
+function question8() {
+    // What symbol for not true (thinks A is correct)
     document.getElementById("welcome-message").innerHTML = "Question 8";
     document.getElementById("quizArea").innerHTML = questions[7];
+    document.getElementById("buttonA").removeEventListener("click", correctAnswer);
+    document.getElementById("buttonA").addEventListener("click", wrongAnswer);
+    document.getElementById("buttonB").addEventListener("click", wrongAnswer);
+    document.getElementById("buttonC").addEventListener("click", wrongAnswer);
+    document.getElementById("buttonD").addEventListener("click", correctAnswer);
+    //d
 }
 
 //Copy + paste for questions 0-6
@@ -165,17 +224,17 @@ function question7() {
 //return to homepage
 // }
 
-function setTime() {
-    var minutes;
-    minutes = workMinutesInput.value.trim();
-    clearInterval(interval);
-    totalSeconds = minutes * 60;
-}
+// function setTime() {
+//     var minutes;
+//     minutes = workMinutesInput.value.trim();
+//     clearInterval(interval);
+//     totalSeconds = minutes * 60;
+// }
 
-function startTimer() {
-    setTime();
-    interval = setInterval(function () {
-        secondsElapsed++;
-        renderTime();
-    }, 1000);
-}
+// function startTimer() {
+//     setTime();
+//     interval = setInterval(function () {
+//         secondsElapsed++;
+//         renderTime();
+//     }, 1000);
+// }
