@@ -1,5 +1,12 @@
-var questions = ["In what year was JavaScript first introduced?", "JavaScript was first developed to add programs to webpages in which browser?", "What to Java and JavaScript have in common as programming languages?", "What other name can be used interchangeably with JavaScript?", "How many bits does JavaScript use to store a single number value?", "What is the appoximate largest whole number that can be stored in JavaScript?", "The % sign represents which arithmetic operator?", "What symbol would you type before a declaration to indicate it is not true?"];
-// This code is broken.
+var questions = ["In what year was JavaScript first introduced?   \n \n A. 1993 \n B. 1995 \n C. 1999 \n D. 2001",
+    "JavaScript was first developed to add programs to webpages in which browser?\n \n A. Internet Explorer \n B. Omni Web \n C. Mozilla \n D. Netscape Navigator",
+    "What to Java and JavaScript have in common as programming languages?  \n \n A. Very little. Javascript was named as a marketing ploy to leverage Java's growing popularity \n B. They were developed by the same company \n C. The two can be used interchangeably for the same processes \n D. The two can be used together for complementary processes",
+    "What other name can be used interchangeably with JavaScript?  \n \n A. Java \n B. HTML \n C. BrowserScript \n D. ECMAScript",
+    "How many bits does JavaScript use to store a single number value?  \n \n A. 4 \n B. 16 \n C. 64 \n D. 128",
+    "What is the appoximate largest whole number that can be stored in JavaScript? \n \n A. 256 Billion \n B. 64 Trillion \n C. 9 Quadrillion \n D. 18 Quintillion",
+    "The % sign represents which arithmetic operator?  \n \n A. Remainder \n B. Percentage of \n C. Divide \n D. Less than",
+    "What symbol would you type before a declaration to indicate it is not true?  \n \n A. ? \n B. - \n C. / \n D. !"];
+
 var ans0 = ["1993", "1995", "1999", "2001"];
 var ans1 = ["Internet Explorer", "Omni Web", "Mozilla", "Netscape Navigator"]
 var ans2 = ["Very little. Javascript was named as a marketing ploy to leverage Java's growing popularity", "They were developed by the same company", "The two can be used interchangeably for the same processes", "The two can be used together for complementary processes"]
@@ -8,11 +15,14 @@ var ans4 = ["4", "16", "64", "128"]
 var ans5 = ["256 billion", "64 trillion", "9 quadrillion", "18 quintillion"]
 var ans6 = ["Remainder", "Percentage of", "Division", "Is less than"]
 var ans7 = ["?", "-", "/", "!"]
+
 var minutesLeft = 5;
 var secondsLeft = 0;
 var startButton = document.querySelector("#start-button");
+var secondsElapsed = 0;
 
 document.getElementById("start-button").addEventListener("click", question0);
+document.getElementById("start-button").addEventListener("click", startTimer);
 
 // function getFormattedMinutes() {
 //     //
@@ -83,6 +93,13 @@ function question0() {
     document.getElementById("start-button").style.display = "none";
     document.getElementById("welcome-message").innerHTML = "Question 1";
     document.getElementById("quizArea").innerHTML = questions[0];
+    var ansList = "";
+    for (var i = 0; i < ans0.length; i++) {
+
+        ansList += "<li>" + ans[0] + "</li>";
+    }
+
+
     document.getElementById("highScoresLink").style.display = "none";
     //display 4 answer boxes
     //Start clock countdown
@@ -90,7 +107,7 @@ function question0() {
     //Display answers 0
 }
 
-    //Copy + paste for questions 0-6
+//Copy + paste for questions 0-6
 // function quetion1() {
 //display question[0]
 //display 4 answer boxes
@@ -119,5 +136,17 @@ function question0() {
 //return to homepage
 // }
 
-//add startTimer
-//startButton.addEventListener("click", question0);
+function setTime() {
+    var minutes;
+    minutes = workMinutesInput.value.trim();
+    clearInterval(interval);
+    totalSeconds = minutes * 60;
+}
+
+function startTimer() {
+    setTime();
+    interval = setInterval(function () {
+        secondsElapsed++;
+        renderTime();
+    }, 1000);
+}
