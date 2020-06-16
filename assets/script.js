@@ -88,23 +88,52 @@ document.getElementById("start-button").addEventListener("click", startTimer);
 // }
 
 function question0() {
-    //var quiz = document.getElementsById("#quizArea");
-    // quizArea.textContent = (questions[0])
     document.getElementById("start-button").style.display = "none";
     document.getElementById("welcome-message").innerHTML = "Question 1";
     document.getElementById("quizArea").innerHTML = questions[0];
-    var ansList = "";
-    for (var i = 0; i < ans0.length; i++) {
-
-        ansList += "<li>" + ans[0] + "</li>";
-    }
-
-
     document.getElementById("highScoresLink").style.display = "none";
-    //display 4 answer boxes
+    document.getElementById("answer-buttons").addEventListener("click", question1);
     //Start clock countdown
-    //Display question 0
-    //Display answers 0
+}
+
+function question1() {
+    document.getElementById("welcome-message").innerHTML = "Question 2";
+    document.getElementById("quizArea").innerHTML = questions[1];
+    document.getElementById("answer-buttons").addEventListener("click", question2);
+}
+
+function question2() {
+    document.getElementById("welcome-message").innerHTML = "Question 3";
+    document.getElementById("quizArea").innerHTML = questions[2];
+    document.getElementById("answer-buttons").addEventListener("click", question3);
+}
+
+function question3() {
+    document.getElementById("welcome-message").innerHTML = "Question 4";
+    document.getElementById("quizArea").innerHTML = questions[3];
+    document.getElementById("answer-buttons").addEventListener("click", question4);
+}
+
+function question4() {
+    document.getElementById("welcome-message").innerHTML = "Question 5";
+    document.getElementById("quizArea").innerHTML = questions[4];
+    document.getElementById("answer-buttons").addEventListener("click", question5);
+}
+
+function question5() {
+    document.getElementById("welcome-message").innerHTML = "Question 6";
+    document.getElementById("quizArea").innerHTML = questions[5];
+    document.getElementById("answer-buttons").addEventListener("click", question6);
+}
+function question6() {
+    document.getElementById("welcome-message").innerHTML = "Question 7";
+    document.getElementById("quizArea").innerHTML = questions[6];
+    document.getElementById("answer-buttons").addEventListener("click", question7);
+}
+
+function question7() {
+    document.getElementById("welcome-message").innerHTML = "Question 8";
+    document.getElementById("quizArea").innerHTML = questions[7];
 }
 
 //Copy + paste for questions 0-6
