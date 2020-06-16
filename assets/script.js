@@ -81,7 +81,7 @@ document.getElementById("start-button").addEventListener("click", question1);
 
 function wrongAnswer() {
     document.getElementById("footer-note").innerHTML = "Wrong";
-    //subtract 20 seconds
+    //secondsRemaining -20;
 }
 
 function correctAnswer() {
@@ -147,7 +147,7 @@ function question4() {
 }
 
 function question5() {
-    //How many bits (thinks A is correct)
+    //How many bits
     document.getElementById("welcome-message").innerHTML = "Question 5";
     document.getElementById("quizArea").innerHTML = questions[4];
     document.getElementById("buttonD").removeEventListener("click", correctAnswer);
@@ -156,11 +156,10 @@ function question5() {
     document.getElementById("buttonC").addEventListener("click", correctAnswer);
     document.getElementById("buttonD").addEventListener("click", wrongAnswer);
     document.getElementById("answer-buttons").addEventListener("click", question6);
-    //
 }
 
 function question6() {
-    //largest whole number (thinks A is correct)
+    //largest whole number
     document.getElementById("welcome-message").innerHTML = "Question 6";
     document.getElementById("quizArea").innerHTML = questions[5];
     document.getElementById("buttonA").addEventListener("click", wrongAnswer);
@@ -168,10 +167,10 @@ function question6() {
     document.getElementById("buttonC").addEventListener("click", correctAnswer);
     document.getElementById("buttonD").addEventListener("click", wrongAnswer);
     document.getElementById("answer-buttons").addEventListener("click", question7);
-    //c
 }
+
 function question7() {
-    // What does % mean (thinks D is correct)
+    // What does % mean
     document.getElementById("welcome-message").innerHTML = "Question 7";
     document.getElementById("quizArea").innerHTML = questions[6];
     document.getElementById("buttonC").removeEventListener("click", correctAnswer);
@@ -180,11 +179,10 @@ function question7() {
     document.getElementById("buttonC").addEventListener("click", wrongAnswer);
     document.getElementById("buttonD").addEventListener("click", wrongAnswer);
     document.getElementById("answer-buttons").addEventListener("click", question8);
-    //a
 }
 
 function question8() {
-    // What symbol for not true (thinks A is correct)
+    // What symbol for not true 
     document.getElementById("welcome-message").innerHTML = "Question 8";
     document.getElementById("quizArea").innerHTML = questions[7];
     document.getElementById("buttonA").removeEventListener("click", correctAnswer);
@@ -192,24 +190,26 @@ function question8() {
     document.getElementById("buttonB").addEventListener("click", wrongAnswer);
     document.getElementById("buttonC").addEventListener("click", wrongAnswer);
     document.getElementById("buttonD").addEventListener("click", correctAnswer);
-    //d
+    document.getElementById("answer-buttons").addEventListener("click", returnHome);
 }
 
-//Copy + paste for questions 0-6
-// function quetion1() {
-//display question[0]
-//display 4 answer boxes
-//if (userInput === b) {
-//Display "correct" below answers for 5 seconds
-//Remove current questions and answers
-//Display next question & answers
-//}
-//Else {
-//Display "wrong" below answers for 5 seconds
-//Display next question & answers
-//remove 20 seconds from timer
-//}
-// }
+function returnHome() {
+    //  if (secondsRemaining > 0) {
+    document.getElementById("answer-buttons").addEventListener("click", alert("Congratulations, you have conquered the quiz! Are you sure you're not Brian Eich..."));
+    // Ask for initials & store secondsRemaining in local storage to be displayed on high scores list
+    //    }
+
+    // else {
+    //     alert("Oohhh so close! Please try again.")
+    // }
+
+    document.getElementById("footer-note").innerHTML = "A Gussell87 Website";
+    document.getElementById("start-button").style.removeProperty('display');
+    document.getElementById("highScoresLink").style.removeProperty("display");
+    document.getElementById("welcome-message").innerHTML = "Welcome back. Have another go!";
+
+}
+
 
 // function question7() {
 //     if (secondsLeft > 0) {
